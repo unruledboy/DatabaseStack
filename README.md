@@ -17,6 +17,9 @@ There might be issues here and there, like the category, the individual ones, bu
 
 # The Database Stack
 
+You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm 
+
+
 - RDBMS
 	- MS SQL Server
 		- SQL OS
