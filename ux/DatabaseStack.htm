@@ -2,6 +2,10 @@
 <meta charset="utf-8">
 <style>
 
+body {
+	padding: 20px;
+}
+
 .node circle {
   fill: #fff;
   stroke: steelblue;
@@ -23,8 +27,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
-var width = 960,
-    height = 2200;
+var width = 1024,
+    height = 800;
 
 var cluster = d3.layout.cluster()
     .size([height, width - 160]);
