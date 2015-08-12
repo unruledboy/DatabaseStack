@@ -1,7 +1,7 @@
 # DatabaseStack
 database technology stack, including MS SQL Server, Azure etc.
 
-
+![Image of The Database Stack](https://raw.githubusercontent.com/unruledboy/DatabaseStack/master/preview.png)
 
 # What and why?
 Have you ever wondered:
@@ -48,7 +48,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Thread and Task Management
 			- Buffer Management
 			- Distributed Query Processing
-		- Communication 
+		- Communication
 			- Tabular Data Stream (TDS)
 			- Protocols
 				- TCP/IP
@@ -110,7 +110,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 				- Scalar-valued Function
 			- Type
 				- System Type
-				- User-defined Type (UDF)
+				- User-defined Type (UDT)
 			- Index
 				- Clustered Index
 				- Non-clustered Index
@@ -126,8 +126,8 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Constraint
 			- Key
 			- Default
-			- Assembly
 			- Synonym
+			- Cursor
 			- Collation
 			- Login
 			- User
@@ -135,7 +135,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Server role
 			- Endpoint
 			- Job
-			- Cursor 
+			- Assembly
 			- Linked Server
 			- Service Broker
 		- Standard
@@ -144,7 +144,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Query Language
 				- T-SQL (Transact-SQL)
 				- MDX (MultiDimensional eXpressions)
-			- Data Manipulation Language (DML )
+			- Data Manipulation Language (DML)
 				- CRUD
 					- Create(INSERT)
 					- Retrieve(SELECT)
@@ -168,7 +168,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- tempdb (temp tables / sps)
 			- msdb (jobs/alerts/backups)
 			- model (template for new db)
-			- resource (invisible, system objects) 
+			- resource (invisible, system objects)
 		- File
 			- primary (MDF)
 			- secondary (NDF)
