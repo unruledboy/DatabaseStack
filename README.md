@@ -59,13 +59,14 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Instance
 				- Default
 				- Named
+				- Alias
 			- Port
 				- Default: 1433
 				- Dynamic
 			- Transaction
 				- ACID
 					- Atomic
-					- Consitent
+					- Consistent
 					- Isolated
 					- Durable
 				- Checkpoint
@@ -90,11 +91,11 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 				- Row versioning
 		- Core Objects
 			- Database
-				- Recovery model
+				- Recovery Models
 					- Simple
 					- Full
 					- Bulk logged
-				- Compatibility level
+				- Compatibility Levels
 					- 130: SQL  Server 2016
 					- 120: SQL  Server 2014
 					- 110: SQL  Server 2012
@@ -104,16 +105,37 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Table
 				- FileTable
 			- View
+				- Standard
+				- Indexed
+				- Partitioned
 			- Stored Procedure (SP)
 			- Function (FN)
 				- Table-valued Function
 				- Scalar-valued Function
-			- Type
-				- System Type
-				- User-defined Type (UDT)
+			- Data Type
+				- Types
+					- System Type
+					- User-defined Type (UDT)
+				- Conversion
+				- Precedence
+				- Synonym
+				- Precision/Scale/Length
+				- XML
+				- JSON
+				- Spatial (CLR)
 			- Index
-				- Clustered Index
-				- Non-clustered Index
+				- Index Type
+					- Clustered Index
+					- Non-clustered Index
+				- Index Setting
+					- Include
+					- Filter
+				- Index Management
+					- Rebuild
+					- Reorganise
+					- Disable
+					- Enable
+					- Drop
 			- Column
 				- columnstore
 				- NTFS FileStream
@@ -135,7 +157,24 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Server role
 			- Endpoint
 			- Job
-			- Assembly
+				- Job Agent
+				- Job Activity Monitor
+				- Alert
+				- Operator
+				- SQL Job
+					- Step
+					- Schedule
+					- Notification
+			- .NET CLR
+				- Assembly
+				- Managed Code Types
+					- Function
+					- Stored Procedure
+					- Trigger
+					- UDF
+					- UDA
+					- UDT
+				- Security Levels
 			- Linked Server
 			- Service Broker
 		- Standard
@@ -150,11 +189,20 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 					- Retrieve(SELECT)
 					- Update
 					- Delete
+				- MERGE
+				- TEXT
+					- UPDATETEXT
+					- WRITETEXT
+					- READTEXT
+				- BULK INSERT
+				- EXECUTE
 			- Data Definition Language (DDL)
 				- CREATE
 				- ALTER
 				- DROP
 				- TRUNCATE
+				- RESTORE
+				- RECONFIGURE
 			- Data Control Language (DCL)
 				- GRANT
 				- REVOKE
@@ -174,6 +222,7 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- secondary (NDF)
 			- log (LDF)
 			- File/Filegroup
+			- Auto Grow
 		- Runtime
 			- Process
 			- Worker
@@ -193,11 +242,17 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Log Shipping
 			- Publish/Subscribe
 				- Transactional
-				- Merg
+				- Merge
 				- Snapshot 
 			- Mirroring
 			- AlwaysOn
 			- Clustering
+				- Core  
+					- Shared Disk Array
+					- Quorum
+				- Failover
+					- Active/Active
+					- Active/Passive
 			- Snapshot
 		- Versions
 			- Express
@@ -215,17 +270,18 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Maintenance Plan
 			- Logs
 			- Database Mail
-			- Backup/Restore
-				- Mode
-					- Full
-					- Differential
-					- Transaction log
+			- Database
+				- Backup/Restore
+					- Mode
+						- Full
+						- Differential
+						- Transaction log
+				- Online/Offline
+				- Attach/Deattach
 			- Import/Export
 			- Shrink
 			- DBCC
 			- Bulk Load
-			- Online/Offline
-			- Attach/Dettach
 			- Resource governor
 			- Facets
 		- Business Intelligence (BI)
@@ -236,12 +292,20 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 			- Dedicated Administrator Connection (DAC) - "ADMIN:INSTANCE"
 			- SQL Server Profiler
 			- Activity Monitor
+			- Error
+				- Severity Levels
+				- Error Log
+				- sys.xp_readerrorlog
 		- Performance
 			- Seek
 			- Scan
 			- Fragmentation
 			- Partitioning
 			- Database Engine Tuning Advisor
+		- Services
+			- SQL Server
+			- SQL Server Browser
+			- SQL Server Agent
 
 	- Oracle
 	- MySQL
@@ -250,6 +314,15 @@ You can have a graphical preview here: https://rawgit.com/unruledboy/DatabaseSta
 
 - Cloud
 	- Azure
+		- Database
+		- Redis Cache
+		- Storage
+			- Blobs
+			- Tables
+			- Queues
+			- Files and Disks
+		- StorSimple
+		- SQL Data Warehouse
 
 - NoSQL
 	- Azure Document DB

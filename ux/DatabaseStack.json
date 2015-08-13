@@ -75,7 +75,8 @@
                   "name": "Instance",
                   "children": [
                     { "name": "Default" },
-                    { "name": "Named" }
+                    { "name": "Named" },
+                    { "name": "Alias" }
                   ]
                 },
                 {
@@ -92,7 +93,7 @@
                       "name": "ACID",
                       "children": [
                         { "name": "Atomic" },
-                        { "name": "Consitent" },
+                        { "name": "Consistent" },
                         { "name": "Isolated" },
                         { "name": "Durable" }
                       ]
@@ -144,7 +145,7 @@
                   "name": "Database",
                   "children": [
                     {
-                      "name": "Recovery model",
+                      "name": "Recovery Models",
                       "children": [
                         { "name": "Simple" },
                         { "name": "Full" },
@@ -152,7 +153,7 @@
                       ]
                     },
                     {
-                      "name": "Compatibility level",
+                      "name": "Compatibility Levels",
                       "children": [
                         { "name": "130: SQL  Server 2016" },
                         { "name": "120: SQL  Server 2014" },
@@ -170,7 +171,14 @@
                     { "name": "FileTable" }
                   ]
                 },
-                { "name": "View" },
+                {
+                  "name": "View",
+                  "children": [
+                    { "name": "Standard" },
+                    { "name": "Indexed" },
+                    { "name": "Partitioned" }
+                  ]
+                },
                 { "name": "Stored Procedure (SP)" },
                 {
                   "name": "Function (FN)",
@@ -180,17 +188,51 @@
                   ]
                 },
                 {
-                  "name": "Type",
+                  "name": "Data Type",
                   "children": [
-                    { "name": "System Type" },
-                    { "name": "User-defined Type (UDT)" }
+                    {
+                      "name": "Types",
+                      "children": [
+                        { "name": "System Type" },
+                        { "name": "User-defined Type (UDT)" }
+                      ]
+                    },
+                    { "name": "Conversion" },
+                    { "name": "Precedence" },
+                    { "name": "Synonym" },
+                    { "name": "Precision/Scale/Length" },
+                    { "name": "XML" },
+                    { "name": "JSON" },
+                    { "name": "Spatial (CLR)" }
                   ]
                 },
                 {
                   "name": "Index",
                   "children": [
-                    { "name": "Clustered Index" },
-                    { "name": "Non-clustered Index" }
+                    {
+                      "name": "Index Types",
+                      "children": [
+                        { "name": "Clustered Index" },
+                        { "name": "Non-clustered Index" }
+                      ]
+                    },
+                    {
+                      "name": "Index Setting",
+                      "children": [
+                        { "name": "Include" },
+                        { "name": "Filter" }
+                      ]
+                    },
+                    {
+                      "name": "Index Management",
+                      "children": [
+                        { "name": "Rebuild" },
+                        { "name": "Reorganise" },
+                        { "name": "Disable" },
+                        { "name": "Enable" },
+                        { "name": "Drop" }
+                      ]
+                    }
                   ]
                 },
                 {
@@ -208,8 +250,8 @@
                       "name": "Table Trigger",
                       "children": [
                         { "name": "BEFORE" },
-                        { "name": "AFTER" },
-                        { "name": "INSTEADOF" }
+                        { "name": "FOR/AFTER" },
+                        { "name": "INSTEAD OF" }
                       ]
                     }
                   ]
@@ -225,8 +267,41 @@
                 { "name": "Rule" },
                 { "name": "Server role" },
                 { "name": "Endpoint" },
-                { "name": "Job" },
-                { "name": "Assembly" },
+                {
+                  "name": "Job",
+                  "children": [
+                    { "name": "Job Agent" },
+                    { "name": "Job Activity Monitor" },
+                    { "name": "Alert" },
+                    { "name": "Operator" },
+                    {
+                      "name": "SQL Job",
+                      "children": [
+                        { "name": "Step" },
+                        { "name": "Schedule" },
+                        { "name": "Notification" }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": ".NET CLR",
+                  "children": [
+                    { "name": "Assembly" },
+                    {
+                      "name": "Managed Code Types",
+                      "children": [
+                        { "name": "Function" },
+                        { "name": "Stored Procedure" },
+                        { "name": "Trigger" },
+                        { "name": "UDF" },
+                        { "name": "UDA" },
+                        { "name": "UDT" }
+                      ]
+                    },
+                    { "name": "Security Levels" }
+                  ]
+                },
                 { "name": "Linked Server" },
                 { "name": "Service Broker" }
               ]
@@ -260,7 +335,18 @@
                         { "name": "Update" },
                         { "name": "Delete" }
                       ]
-                    }
+                    },
+                    { "name": "MERGE" },
+                    {
+                      "name": "TEXT",
+                      "children": [
+                        { "name": "UPDATETEXT" },
+                        { "name": "WRITETEXT" },
+                        { "name": "READTEXT" }
+                      ]
+                    },
+                    { "name": "BULK INSERT" },
+                    { "name": "EXECUTE" }
                   ]
                 },
                 {
@@ -269,7 +355,9 @@
                     { "name": "CREATE" },
                     { "name": "ALTER" },
                     { "name": "DROP" },
-                    { "name": "TRUNCATE" }
+                    { "name": "TRUNCATE" },
+                    { "name": "RESTORE" },
+                    { "name": "RECONFIGURE" }
                   ]
                 },
                 {
@@ -291,7 +379,7 @@
               ]
             },
             {
-              "name": "System database",
+              "name": "System Databases",
               "children": [
                 { "name": "master (dbs, login, configs)" },
                 { "name": "tempdb (temp tables / sps)" },
@@ -306,7 +394,8 @@
                 { "name": "primary (MDF)" },
                 { "name": "secondary (NDF)" },
                 { "name": "log (LDF)" },
-                { "name": "File/Filegroup" }
+                { "name": "File/Filegroup" },
+                { "name": "Auto Grow" }
               ]
             },
             {
@@ -348,13 +437,31 @@
                   "name": "Publish/Subscribe",
                   "children": [
                     { "name": "Transactional" },
-                    { "name": "Merg" },
+                    { "name": "Merge" },
                     { "name": "Snapshot " }
                   ]
                 },
                 { "name": "Mirroring" },
                 { "name": "AlwaysOn" },
-                { "name": "Clustering" },
+                {
+                  "name": "Clustering",
+                  "children": [
+                    {
+                      "name": "Core",
+                      "children": [
+                        { "name": "Shared Disk Array" },
+                        { "name": "Quorum" }
+                      ]
+                    },
+                    {
+                      "name": "Failover",
+                      "children": [
+                        { "name": "Active/Active" },
+                        { "name": "Active/Passive" }
+                      ]
+                    }
+                  ]
+                },
                 { "name": "Snapshot" }
               ]
             },
@@ -385,24 +492,29 @@
                 { "name": "Logs" },
                 { "name": "Database Mail" },
                 {
-                  "name": "Backup/Restore",
+                  "name": "Database",
                   "children": [
                     {
-                      "name": "Mode",
+                      "name": "Backup/Restore",
                       "children": [
-                        { "name": "Full" },
-                        { "name": "Differential" },
-                        { "name": "Transaction log" }
+                        {
+                          "name": "Mode",
+                          "children": [
+                            { "name": "Full" },
+                            { "name": "Differential" },
+                            { "name": "Transaction log" }
+                          ]
+                        }
                       ]
-                    }
+                    },
+                    { "name": "Online/Offline" },
+                    { "name": "Attach/Dettach" }
                   ]
                 },
                 { "name": "Import/Export" },
                 { "name": "Shrink" },
                 { "name": "DBCC" },
                 { "name": "Bulk Load" },
-                { "name": "Online/Offline" },
-                { "name": "Attach/Dettach" },
                 { "name": "Resource governor" },
                 { "name": "Facets" }
               ]
@@ -418,9 +530,23 @@
             {
               "name": "Troubleshoot",
               "children": [
-                { "name": "Dedicated Administrator Connection (DAC) - ADMIN:INSTANCE" },
+                {
+                  "name": "Dedicated Administrator Connection (DAC)",
+                  "children": [
+                    { "name": "ADMIN:INSTANCE" },
+                    { "name": "SQL Browser service must be running" }
+                  ]
+                },
                 { "name": "SQL Server Profiler" },
-                { "name": "Activity Monitor" }
+                { "name": "Activity Monitor" },
+                {
+                  "name": "Error",
+                  "children": [
+                    { "name": "Severity Levels" },
+                    { "name": "Error Log" },
+                    { "name": "sys.xp_readerrorlog" }
+                  ]
+                }
               ]
             },
             {
@@ -431,6 +557,14 @@
                 { "name": "Fragmentation" },
                 { "name": "Partitioning" },
                 { "name": "Database Engine Tuning Advisor" }
+              ]
+            },
+            {
+              "name": "Services",
+              "children": [
+                { "name": "SQL Server" },
+                { "name": "SQL Server Browser" },
+                { "name": "SQL Server Agent" }
               ]
             }
           ]
@@ -453,7 +587,23 @@
       "name": "Cloud",
       "children": [
         {
-          "name": "Azure"
+          "name": "Azure",
+          "children": [
+            { "name": "Database" },
+            { "name": "Redis Cache" },
+            {
+              "name": "Storage",
+              "children": [
+                { "name": "Blobs" },
+                { "name": "Tables" },
+                { "name": "Queues" },
+                { "name": "StorSimple" },
+                { "name": "Files and Disks" }
+              ]
+            },
+            { "name": "StorSimple" },
+            { "name": "SQL Data Warehouse" }
+          ]
         }
       ]
     },
