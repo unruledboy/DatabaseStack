@@ -38,7 +38,14 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Extents
 			- Pages
 			- Log File
-				- Write Ahead
+				- Write Ahead Log (WAL)
+					- Recovery
+					- Full
+				- Bulk-logged
+				- Dirty Pages
+				- Lazy Writer
+				- Checkpoint
+				- Log Sequence Number (LSN)
 		- Relational Engine
 			- Query Processing
 				- Parser
@@ -51,11 +58,13 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Buffer Management
 			- Distributed Query Processing
 		- Communication
+			- SQL Server Network Interface (SNI)
 			- Tabular Data Stream (TDS)
 			- Protocols
 				- TCP/IP
 				- Named pipes
 				- Shared memory
+				- Virtual Interface Adapter (VIA)
 				- Web Services
 		- Core Concepts
 			- Instance
@@ -67,10 +76,15 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Dynamic
 			- Transaction
 				- ACID
-					- Atomic
-					- Consistent
-					- Isolated
-					- Durable
+					- Atomicity
+					- Consistency
+					- Isolation
+					- Durability
+				- Types
+					- Implicit
+						- single UPDATE/DELETE
+					- Explicit
+						- BEGIN/COMMIT/ROLLBACK
 				- Checkpoint
 				- Isolation Levels
 					- Read uncommitted
@@ -104,7 +118,16 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- 100: SQL  Server 2008
 					- 90: SQL  Server 2005
 					- 80: SQL Server 2000
+				- Encryption
+				- Copy
 			- Table
+				- Standard
+					- Partition
+					- Compression
+				- Table Variable
+				- Temp Table
+					- Local
+					- Global
 				- FileTable
 			- View
 				- Standard
@@ -145,8 +168,8 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Trigger
 				- Table Trigger
 					- BEFORE
-					- AFTER
-					- INSTEADOF
+					- FOR/AFTER
+					- INSTEAD OF
 			- Constraint
 			- Key
 			- Default
@@ -167,7 +190,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Step
 					- Schedule
 					- Notification
-			- .NET CLR
+			- .SQL CLR (.NET CLR)
 				- Assembly
 				- Managed Code Types
 					- Function
@@ -240,6 +263,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Execution io/cpu/perf
 			- Full Text Search (FTS)
 				- Integrated Full Text Search (iFTS)
+			- Trace flags
 		- Replication
 			- Log Shipping
 			- Publish/Subscribe
@@ -247,6 +271,10 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Merge
 				- Snapshot 
 			- Mirroring
+				- Core
+					- Principal
+					- Witness
+				- Database Mirroring Monitor
 			- AlwaysOn
 			- Clustering
 				- Core  
@@ -283,7 +311,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Import/Export
 			- Shrink
 			- DBCC
-			- Bulk Load
+			- Bulk Copy (bcp command line)
 			- Resource governor
 			- Facets
 		- Business Intelligence (BI)
