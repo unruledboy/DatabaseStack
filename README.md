@@ -1,3 +1,8 @@
+# Localization
+中文: 
+http://www.cnblogs.com/unruledboy/p/DatabaseStack.html
+
+
 # DatabaseStack
 database technology stack, including MS SQL Server, Azure etc.
 
