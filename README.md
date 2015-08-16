@@ -195,7 +195,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Step
 					- Schedule
 					- Notification
-			- .SQL CLR (.NET CLR)
+			- SQL CLR (.NET CLR)
 				- Assembly
 				- Managed Code Types
 					- Function
