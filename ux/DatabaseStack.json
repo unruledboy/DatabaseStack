@@ -29,7 +29,18 @@
                 {
                   "name": "Log File",
                   "children": [
-                    { "name": "Write Ahead" }
+                    { "name": "Write Ahead Log (WAL)" },
+                    {
+                      "name": "Recovery",
+                      "children": [
+                        { "name": "Full" },
+                        { "name": "Bulk-logged" }
+                      ]
+                    },
+                    { "name": "Dirty Pages" },
+                    { "name": "Lazy Writer" },
+                    { "name": "Checkpoint" },
+                    { "name": "Log Sequence Number (LSN)" }
                   ]
                 }
               ]
@@ -56,16 +67,18 @@
             {
               "name": "Communication",
               "children": [
+                { "name": "SQL Server Network Interface (SNI)" },
+                { "name": "Tabular Data Stream (TDS)" },
                 {
                   "name": "Protocols",
                   "children": [
                     { "name": "TCP/IP" },
                     { "name": "Named pipes" },
                     { "name": "Shared memory" },
+                    { "name": "Virtual Interface Adapter (VIA)" },
                     { "name": "Web Services" }
                   ]
-                },
-                { "name": "Tabular Data Stream (TDS)" }
+                }
               ]
             },
             {
@@ -92,10 +105,27 @@
                     {
                       "name": "ACID",
                       "children": [
-                        { "name": "Atomic" },
-                        { "name": "Consistent" },
-                        { "name": "Isolated" },
-                        { "name": "Durable" }
+                        { "name": "Atomicity" },
+                        { "name": "Consistency" },
+                        { "name": "Isolation" },
+                        { "name": "Durability" }
+                      ]
+                    },
+                    {
+                      "name": "Types",
+                      "children": [
+                        {
+                          "name": "Implicit",
+                          "children": [
+                            { "name": "single UPDATE/DELETE" }
+                          ]
+                        },
+                        {
+                          "name": "Explicit",
+                          "children": [
+                            { "name": "BEGIN/COMMIT/ROLLBACK" }
+                          ]
+                        }
                       ]
                     },
                     { "name": "Checkpoint" },
@@ -162,12 +192,29 @@
                         { "name": "90: SQL  Server 2005" },
                         { "name": "80: SQL Server 2000" }
                       ]
-                    }
+                    },
+                    { "name": "Encryption" },
+                    { "name": "Copy" }
                   ]
                 },
                 {
                   "name": "Table",
                   "children": [
+                    {
+                      "name": "Standard",
+                      "children": [
+                        { "name": "Partition" },
+                        { "name": "Compression" }
+                      ]
+                    },
+                    { "name": "Table Variable" },
+                    {
+                      "name": "Temp Table",
+                      "children": [
+                        { "name": "Local" },
+                        { "name": "Global" }
+                      ]
+                    },
                     { "name": "FileTable" }
                   ]
                 },
@@ -285,7 +332,7 @@
                   ]
                 },
                 {
-                  "name": ".NET CLR",
+                  "name": "SQL CLR (.NET CLR)",
                   "children": [
                     { "name": "Assembly" },
                     {
@@ -426,7 +473,8 @@
                   "children": [
                     { "name": "Integrated Full Text Search (iFTS)" }
                   ]
-                }
+                },
+                { "name": "Trace flags" }
               ]
             },
             {
@@ -438,10 +486,22 @@
                   "children": [
                     { "name": "Transactional" },
                     { "name": "Merge" },
-                    { "name": "Snapshot " }
+                    { "name": "Snapshot" }
                   ]
                 },
-                { "name": "Mirroring" },
+                {
+                  "name": "Mirroring",
+                  "children": [
+                    {
+                      "name": "Core",
+                      "children": [
+                        { "name": "Principal" },
+                        { "name": "Witness" }
+                      ]
+                    },
+                    { "name": "Database Mirroring Monitor" }
+                  ]
+                },
                 { "name": "AlwaysOn" },
                 {
                   "name": "Clustering",
@@ -514,7 +574,7 @@
                 { "name": "Import/Export" },
                 { "name": "Shrink" },
                 { "name": "DBCC" },
-                { "name": "Bulk Load" },
+                { "name": "Bulk Copy (bcp command line)" },
                 { "name": "Resource governor" },
                 { "name": "Facets" }
               ]
