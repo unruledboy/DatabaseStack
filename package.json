@@ -1,0 +1,31 @@
+{
+  "name": "DatabaseStack",
+  "version": "2.0.0",
+  "description": "Generate a image for database stack.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index phantomjs readme", 
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unruledboy/DatabaseStack.git"
+  },
+  "keywords": [
+    "Database",
+	"SQL Server",
+    "Stack"
+  ],
+  "author": [
+    "unruledboy <unruledboy@gmail.com>"
+  ],
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/unruledboy/DatabaseStack/issues"
+  },
+  "homepage": "https://github.com/unruledboy/DatabaseStack",
+  "dependencies": {
+    "express": "^4.13.3",
+    "phantom": "^0.7.2"
+  }
+}
