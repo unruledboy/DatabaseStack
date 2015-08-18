@@ -56,6 +56,12 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Query Processing
 					- Parser
 					- Optimizer
+						- Stat
+						- Hinting
+						- Plan
+							- Compilation
+							- Caching
+							- Recompilation
 					- SQL Manager
 					- Database Manager
 					- Query Executor
@@ -243,7 +249,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- ROLLBACK
 					- SAVE TRANSACTION
 			- System Databases
-				- master (dbs, login, configs)
+				- master (dbs, logins, configs)
 				- tempdb (temp tables / sps)
 				- msdb (jobs/alerts/backups)
 				- model (template for new db)
@@ -314,8 +320,8 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 							- Transaction log
 					- Online/Offline
 					- Attach/Dettach
+					- Shrink
 				- Import/Export
-				- Shrink
 				- DBCC
 				- Bulk Copy (bcp command line)
 				- Resource governor
@@ -344,6 +350,9 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- SQL Server
 				- SQL Server Browser
 				- SQL Server Agent
+			- Connectivity
+				- ADO.NET
+				- ODBC
 		- Oracle
 		- MySQL
 		- PostgreSQL

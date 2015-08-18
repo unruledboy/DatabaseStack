@@ -52,7 +52,21 @@
                   "name": "Query Processing",
                   "children": [
                     { "name": "Parser" },
-                    { "name": "Optimizer" },
+                    {
+                      "name": "Optimizer",
+                      "children": [
+                        { "name": "Stat" },
+                        { "name": "Hinting" },
+                        {
+                          "name": "Plan",
+                          "children": [
+                            { "name": "Compilation" },
+                            { "name": "Caching" },
+                            { "name": "Recompilation" }
+                          ]
+                        }
+                      ]
+                    },
                     { "name": "SQL Manager" },
                     { "name": "Database Manager" },
                     { "name": "Query Executor" }
@@ -428,7 +442,7 @@
             {
               "name": "System Databases",
               "children": [
-                { "name": "master (dbs, login, configs)" },
+                { "name": "master (dbs, logins, configs)" },
                 { "name": "tempdb (temp tables / sps)" },
                 { "name": "msdb (jobs/alerts/backups)" },
                 { "name": "model (template for new db)" },
@@ -568,11 +582,11 @@
                       ]
                     },
                     { "name": "Online/Offline" },
-                    { "name": "Attach/Dettach" }
+                    { "name": "Attach/Dettach" },
+                    { "name": "Shrink" }
                   ]
                 },
                 { "name": "Import/Export" },
-                { "name": "Shrink" },
                 { "name": "DBCC" },
                 { "name": "Bulk Copy (bcp command line)" },
                 { "name": "Resource governor" },
@@ -625,6 +639,13 @@
                 { "name": "SQL Server" },
                 { "name": "SQL Server Browser" },
                 { "name": "SQL Server Agent" }
+              ]
+            },
+            {
+              "name": "Connectivity",
+              "children": [
+                { "name": "ADO.NET" },
+                { "name": "ODBC" }
               ]
             }
           ]

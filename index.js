@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000;
 var httpServer = "http://127.0.0.1:" + port + "/";
 
 var pageWidth = 3800; // Magic number!
-var pageHeight = 4000;
+var pageHeight = 4100;
 
 String.prototype.repeat = function(count) {
         var ret = [];
