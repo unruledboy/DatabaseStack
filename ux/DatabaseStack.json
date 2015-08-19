@@ -199,6 +199,13 @@
                     {
                       "name": "Compatibility Levels",
                       "children": [
+                        {
+                          "name": "Version Number",
+                          "children": [
+                            { "name": "Effectively SQL Server version number" },
+                            { "name": "@@VERSION" }
+                          ]
+                        },
                         { "name": "130: SQL  Server 2016" },
                         { "name": "120: SQL  Server 2014" },
                         { "name": "110: SQL  Server 2012" },
@@ -391,10 +398,10 @@
                     {
                       "name": "CRUD",
                       "children": [
-                        { "name": "Create(INSERT)" },
-                        { "name": "Retrieve(SELECT)" },
-                        { "name": "Update" },
-                        { "name": "Delete" }
+                        { "name": "Create (INSERT)" },
+                        { "name": "Retrieve (SELECT)" },
+                        { "name": "Update (UPDATE)" },
+                        { "name": "Delete (DELETE)" }
                       ]
                     },
                     { "name": "MERGE" },

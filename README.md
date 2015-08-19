@@ -124,6 +124,9 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- Full
 						- Bulk logged
 					- Compatibility Levels
+						- Version Number
+							- Effectively SQL Server version number
+							- @@VERSION
 						- 130: SQL  Server 2016
 						- 120: SQL  Server 2014
 						- 110: SQL  Server 2012
@@ -222,10 +225,10 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- MDX (MultiDimensional eXpressions)
 				- Data Manipulation Language (DML)
 					- CRUD
-						- Create(INSERT)
-						- Retrieve(SELECT)
-						- Update
-						- Delete
+						- Create (INSERT)
+						- Retrieve (SELECT)
+						- Update (UPDATE)
+						- Delete (DELETE)
 					- MERGE
 					- TEXT
 						- UPDATETEXT
