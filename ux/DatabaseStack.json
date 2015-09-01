@@ -5,6 +5,38 @@
       "name": "RDBMS",
       "children": [
         {
+          "name": "Basics",
+          "children": [
+            {
+              "name": "Normalisation",
+              "children": [
+                {
+                  "name": "Normal Form",
+                  "children": [
+                    { "name": "First Normal Form (1NF)" },
+                    { "name": "Second Normal Form (2NF)" },
+                    { "name": "Third Normal Form (3NF)" }
+                  ]
+                },
+                {
+                  "name": "Transaction",
+                  "children": [
+                    {
+                      "name": "ACID",
+                      "children": [
+                        { "name": "Atomicity" },
+                        { "name": "Consistency" },
+                        { "name": "Isolation" },
+                        { "name": "Durability" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "MS SQL Server",
           "children": [
             {
@@ -119,10 +151,10 @@
                     {
                       "name": "ACID",
                       "children": [
-                        { "name": "Atomicity" },
-                        { "name": "Consistency" },
-                        { "name": "Isolation" },
-                        { "name": "Durability" }
+                        { "name": "Atomic" },
+                        { "name": "Consistent" },
+                        { "name": "Isolated" },
+                        { "name": "Durable" }
                       ]
                     },
                     {

@@ -33,6 +33,18 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 
 - Database
 	- RDBMS
+		- Basics
+			- Normalisation
+				- Normal Form
+					- First Normal Form (1NF)
+					- Second Normal Form (2NF)
+					- Third Normal Form (3NF)
+				- Transaction
+					- ACID
+						- Atomicity
+						- Consistency
+						- Isolation
+						- Durability
 		- MS SQL Server
 			- SQL OS
 				- Memory Management
@@ -92,10 +104,10 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Dynamic
 				- Transaction
 					- ACID
-						- Atomicity
-						- Consistency
-						- Isolation
-						- Durability
+						- Atomic
+						- Consistent
+						- Isolated
+						- Durable
 					- Types
 						- Implicit
 							- single UPDATE/DELETE
