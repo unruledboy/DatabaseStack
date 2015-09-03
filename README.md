@@ -1,3 +1,9 @@
+# SQL Monitor
+Want to manages sql server performance? Check out SQL Monitor, it can monitor sql server processes and jobs, analyze performance, analyse system, object version control, view executing sql query, kill process / job, object explorer, database shrink/log truncate/backup/detach/attach etc.:
+
+https://github.com/unruledboy/SQLMonitor
+
+
 # Overflow Stack
 The overflow stack family (Web Front End Stack, Database Stack, .NET Stack etc.):
 http://overflowstack.github.io
