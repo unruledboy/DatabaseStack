@@ -12,8 +12,8 @@ var queueReady = ["server"];
 var port = process.env.PORT || 3000;
 var httpServer = "http://127.0.0.1:" + port + "/";
 
-var pageWidth = 2800; // Magic number!
-var pageHeight = 4100;
+var pageWidth = 3000; // Magic number!
+var pageHeight = 4800;
 
 String.prototype.repeat = function(count) {
     return new Array(count + 1).join(this);

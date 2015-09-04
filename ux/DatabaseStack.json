@@ -5,10 +5,45 @@
       "name": "RDBMS",
       "children": [
         {
+          "name": "Simple",
+          "children": [
+            {
+              "name": "dBase ;-)",
+              "url": "https://en.wikipedia.org/wiki/DBase"
+            },
+            { "name": "Foxbase ;-)" },
+            {
+              "name": "FoxPro;-)",
+              "url": "https://en.wikipedia.org/wiki/FoxPro"
+            },
+            {
+              "name": "Visual FoxPro;-)",
+              "url": "https://msdn.microsoft.com/en-us/vfoxpro/bb190225.aspx"
+            },
+            {
+              "name": "Access",
+              "url": "https://products.office.com/en-us/access"
+            },
+            {
+              "name": "Sqlite",
+              "url": "https://www.sqlite.org/"
+            }
+          ]
+        },
+        {
           "name": "Basics",
           "children": [
             {
+              "name": "Edgar F. Codd",
+              "url": "https://en.wikipedia.org/wiki/Edgar_F._Codd"
+            },
+            {
+              "name": "Object/relational mapping (O/RM)",
+              "url": "https://en.wikipedia.org/wiki/Object-relational_mapping"
+            },
+            {
               "name": "Normalisation",
+              "url": "https://en.wikipedia.org/wiki/Database_normalization",
               "children": [
                 {
                   "name": "Normal Form",
@@ -17,19 +52,21 @@
                     { "name": "Second Normal Form (2NF)" },
                     { "name": "Third Normal Form (3NF)" }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "name": "Transaction",
+              "url": "https://en.wikipedia.org/wiki/Database_transaction",
+              "children": [
                 {
-                  "name": "Transaction",
+                  "name": "ACID",
+                  "url": "https://en.wikipedia.org/wiki/ACID",
                   "children": [
-                    {
-                      "name": "ACID",
-                      "children": [
-                        { "name": "Atomicity" },
-                        { "name": "Consistency" },
-                        { "name": "Isolation" },
-                        { "name": "Durability" }
-                      ]
-                    }
+                    { "name": "Atomicity" },
+                    { "name": "Consistency" },
+                    { "name": "Isolation" },
+                    { "name": "Durability" }
                   ]
                 }
               ]
@@ -38,6 +75,7 @@
         },
         {
           "name": "MS SQL Server",
+          "url": "http://www.microsoft.com/en-us/server-cloud/products/sql-server/",
           "children": [
             {
               "name": "SQL OS",
@@ -403,7 +441,28 @@
                   ]
                 },
                 { "name": "Linked Server" },
-                { "name": "Service Broker" }
+                {
+                  "name": "Service Broker",
+                  "children": [
+                    {
+                      "name": "Basics",
+                      "children": [
+                        { "name": "Transactional message queue" }
+                      ]
+                    },
+                    {
+                      "name": "Objects",
+                      "children": [
+                        { "name": "Message" },
+                        { "name": "Contract" },
+                        { "name": "Queue" },
+                        { "name": "Service" },
+                        { "name": "Dialog" },
+                        { "name": "Conversation" }
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
@@ -595,7 +654,10 @@
               "children": [
                 { "name": "SQL Server Management Studio (SSMS)" },
                 { "name": "SQL Server Command Line Util (sqlcmd)" },
-                { "name": "SQL Monitor ;-)" }
+                {
+                  "name": "SQL Monitor ;-)",
+                  "url": "https://github.com/unruledboy/SQLMonitor"
+                }
               ]
             },
             {
@@ -684,22 +746,39 @@
               "name": "Connectivity",
               "children": [
                 { "name": "ADO.NET" },
-                { "name": "ODBC" }
+                { "name": "ODBC" },
+                { "name": "JDBC" }
+              ]
+            },
+            {
+              "name": "Security",
+              "children": [
+                { "name": "Access Control" },
+                { "name": "SQL Inject" },
+                { "name": "Backup" }
               ]
             }
           ]
         },
         {
-          "name": "Oracle"
+          "name": "Oracle",
+          "url": "https://www.oracle.com/database/"
         },
         {
-          "name": "MySQL"
+          "name": "MySQL",
+          "url": "https://www.mysql.com/"
         },
         {
-          "name": "PostgreSQL"
+          "name": "PostgreSQL",
+          "url": "http://www.postgresql.org/"
         },
         {
-          "name": "Informix"
+          "name": "Informix",
+          "url": "http://www.ibm.com/software/data/informix"
+        },
+        {
+          "name": "DB2",
+          "url": "http://www.ibm.com/software/data/db2"
         }
       ]
     },
@@ -708,6 +787,7 @@
       "children": [
         {
           "name": "Azure",
+          "url": "https://azure.microsoft.com",
           "children": [
             { "name": "Database" },
             { "name": "Redis Cache" },
@@ -729,9 +809,108 @@
     },
     {
       "name": "NoSQL",
+      "url": "https://en.wikipedia.org/wiki/NoSQL",
       "children": [
         {
-          "name": "Azure Document DB"
+          "name": "Concepts",
+          "children": [
+            { "name": "XML/JSON based" },
+            { "name": "Eventually Consistency" }
+          ]
+        },
+        {
+          "name": "Limitation",
+          "children": [
+            {
+              "name": "CAPS/Brewer's theorem",
+              "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+              "children": [
+                { "name": "Consistency" },
+                { "name": "Availability" },
+                { "name": "Partition tolerance" }
+              ]
+            },
+            { "name": "Lack of join" },
+            { "name": "Lack of true ACID" }
+          ]
+        },
+        {
+          "name": "Types",
+          "children": [
+            {
+              "name": "Column",
+              "children": [
+                {
+                  "name": "Cassandra",
+                  "url": "http://cassandra.apache.org/"
+                },
+                {
+                  "name": "HBase",
+                  "url": "http://hbase.apache.org/"
+                }
+              ]
+            },
+            {
+              "name": "Key/Value",
+              "children": [
+                {
+                  "name": "CouchDB",
+                  "url": "http://couchdb.apache.org/"
+                },
+                {
+                  "name": "AWS Dynamo",
+                  "url": "https://aws.amazon.com/dynamodb/"
+                },
+                {
+                  "name": "MemcacheDB",
+                  "url": "http://memcachedb.org/"
+                },
+                {
+                  "name": "Redis",
+                  "url": "http://redis.io/"
+                }
+              ]
+            },
+            {
+              "name": "Document",
+              "children": [
+                {
+                  "name": "Apache CouchDB",
+                  "url": "http://couchdb.apache.org/"
+                },
+                {
+                  "name": "Couchbase",
+                  "url": "http://www.couchbase.com/"
+                },
+                {
+                  "name": "Azure DocumentDB",
+                  "url": "http://azure.microsoft.com/en-us/services/documentdb/"
+                },
+                {
+                  "name": "MongoDB",
+                  "url": "https://www.mongodb.org/"
+                }
+              ]
+            },
+            {
+              "name": "Graph",
+              "children": [
+                {
+                  "name": "Neo4J",
+                  "url": "http://neo4j.com/"
+                }
+              ]
+            },
+            {
+              "name": "Object",
+              "children": [
+                {
+                  "name": "ObjectStore",
+                  "url": "http://www.objectstore.com/"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

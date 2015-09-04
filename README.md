@@ -39,19 +39,28 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 
 - Database
 	- RDBMS
+		- Simple
+			- [dBase ;-)](https://en.wikipedia.org/wiki/DBase)
+			- Foxbase ;-)
+			- [FoxPro;-)](https://en.wikipedia.org/wiki/FoxPro)
+			- [Visual FoxPro;-)](https://msdn.microsoft.com/en-us/vfoxpro/bb190225.aspx)
+			- [Access](https://products.office.com/en-us/access)
+			- [Sqlite](https://www.sqlite.org/)
 		- Basics
-			- Normalisation
+			- [Edgar F. Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd)
+			- [Object/relational mapping (O/RM)](https://en.wikipedia.org/wiki/Object-relational_mapping)
+			- [Normalisation](https://en.wikipedia.org/wiki/Database_normalization)
 				- Normal Form
 					- First Normal Form (1NF)
 					- Second Normal Form (2NF)
 					- Third Normal Form (3NF)
-				- Transaction
-					- ACID
-						- Atomicity
-						- Consistency
-						- Isolation
-						- Durability
-		- MS SQL Server
+			- [Transaction](https://en.wikipedia.org/wiki/Database_transaction)
+				- [ACID](https://en.wikipedia.org/wiki/ACID)
+					- Atomicity
+					- Consistency
+					- Isolation
+					- Durability
+		- [MS SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/)
 			- SQL OS
 				- Memory Management
 				- Buffer Pool
@@ -239,6 +248,15 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Security Levels
 				- Linked Server
 				- Service Broker
+					- Basics
+						- Transactional message queue
+					- Objects
+						- Message
+						- Contract
+						- Queue
+						- Service
+						- Dialog
+						- Conversation
 			- Standard
 				- ANSI 92
 			- Languages
@@ -332,7 +350,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Management
 				- SQL Server Management Studio (SSMS)
 				- SQL Server Command Line Util (sqlcmd)
-				- SQL Monitor ;-)
+				- [SQL Monitor ;-)](https://github.com/unruledboy/SQLMonitor)
 			- Maintenance
 				- Maintenance Plan
 				- Logs
@@ -378,12 +396,18 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- Connectivity
 				- ADO.NET
 				- ODBC
-		- Oracle
-		- MySQL
-		- PostgreSQL
-		- Informix
+				- JDBC
+			- Security
+				- Access Control
+				- SQL Inject
+				- Backup
+		- [Oracle](https://www.oracle.com/database/)
+		- [MySQL](https://www.mysql.com/)
+		- [PostgreSQL](http://www.postgresql.org/)
+		- [Informix](http://www.ibm.com/software/data/informix)
+		- [DB2](http://www.ibm.com/software/data/db2)
 	- Cloud
-		- Azure
+		- [Azure](https://azure.microsoft.com)
 			- Database
 			- Redis Cache
 			- Storage
@@ -394,7 +418,34 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Files and Disks
 			- StorSimple
 			- SQL Data Warehouse
-	- NoSQL
-		- Azure Document DB
+	- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
+		- Concepts
+			- XML/JSON based
+			- Eventually Consistency
+		- Limitation
+			- [CAPS/Brewer's theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+				- Consistency
+				- Availability
+				- Partition tolerance
+			- Lack of join
+			- Lack of true ACID
+		- Types
+			- Column
+				- [Cassandra](http://cassandra.apache.org/)
+				- [HBase](http://hbase.apache.org/)
+			- Key/Value
+				- [CouchDB](http://couchdb.apache.org/)
+				- [AWS Dynamo](https://aws.amazon.com/dynamodb/)
+				- [MemcacheDB](http://memcachedb.org/)
+				- [Redis](http://redis.io/)
+			- Document
+				- [Apache CouchDB](http://couchdb.apache.org/)
+				- [Couchbase](http://www.couchbase.com/)
+				- [Azure DocumentDB](http://azure.microsoft.com/en-us/services/documentdb/)
+				- [MongoDB](https://www.mongodb.org/)
+			- Graph
+				- [Neo4J](http://neo4j.com/)
+			- Object
+				- [ObjectStore](http://www.objectstore.com/)
 
 <!--BUILD_END-->	
