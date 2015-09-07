@@ -129,11 +129,20 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- Explicit
 							- BEGIN/COMMIT/ROLLBACK
 					- Checkpoint
-					- Isolation Levels
+					- [Isolation Levels (low to high)](https://technet.microsoft.com/en-us/library/ms189122(v=sql.105).aspx)
 						- Read uncommitted
-						- Read committed
+							- dirty read
+							- same as NOLOCK hint
+						- Read committed (default)
+							- READ_COMMITTED_SNAPSHOT
+								- ON
+									- repeatable read
+								- OFF (default)
+									- Nonrepeatable read, phantom
 						- Repeatable read
 						- Snapshot
+							- Database ALLOW_SNAPSHOT_ISOLATION ON
+							- 2005+
 						- Serializable
 				- Concurrency
 					- Lock
@@ -220,6 +229,11 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Key
 				- Default
 				- Synonym
+				- Sequence
+				- Variable
+					- Local Variable (@)
+					- Global Variable (@@)
+				- Common Table Expression (CTE)
 				- Cursor
 				- Collation
 				- Login
@@ -340,6 +354,39 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- Active/Passive
 				- Snapshot
 			- Versions
+				- SQL Server 2005
+					- SSIS
+					- SSRS
+					- SSAS
+					- Common Language Runtime (CLR)
+					- XML
+					- Data Service (SOAP)
+					- Service Broker
+					- Common Table Expression (CTE)
+					- Dynamic Management View (DMV)
+					- Database Mirroring (SP1)
+					- TRY/CATCH
+				- SQL Server 2008
+					- Always On
+					- FILESTREAM
+					- Integrated Full-Text Search (iFTS)
+					- Spatial Types
+						- GEOMETRY
+						- GEOGRAPHY
+					- Transparent Data Encryption (TDE)
+					- IntelliSense
+					- SSRS Charting (acquired Dundas charts)
+				- SQL Server 2012
+					- Columnstore Index
+					- Sequence
+					- THROW
+				- SQL Server 2014
+					- In-memory Table
+				- SQL Server 2016
+					- JSON
+					- Ploybase (connector to BigData)
+					- Always Encrypted
+			- Editions
 				- Express
 				- BI
 				- Web
@@ -371,6 +418,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Facets
 			- Business Intelligence (BI)
 				- SQL Server Integration Service (SSIS)
+					- Extract-Transform-Load (ETL)
 				- SQL Server Reporting Service (SSRS)
 				- SQL Server Analysis Service (SSAS)
 			- Troubleshoot
