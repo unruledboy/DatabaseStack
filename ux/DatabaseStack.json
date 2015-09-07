@@ -214,12 +214,46 @@
                     },
                     { "name": "Checkpoint" },
                     {
-                      "name": "Isolation Levels",
+                      "name": "Isolation Levels (low to high)",
+                      "url": "https://technet.microsoft.com/en-us/library/ms189122(v=sql.105).aspx",
                       "children": [
-                        { "name": "Read uncommitted" },
-                        { "name": "Read committed" },
+                        {
+                          "name": "Read uncommitted",
+                          "children": [
+                            { "name": "dirty read" },
+                            { "name": "same as NOLOCK hint" }
+                          ]
+                        },
+                        {
+                          "name": "Read committed (default)",
+                          "children": [
+                            {
+                              "name": "READ_COMMITTED_SNAPSHOT",
+                              "children": [
+                                {
+                                  "name": "ON",
+                                  "children": [
+                                    { "name": "repeatable read" }
+                                  ]
+                                },
+                                {
+                                  "name": "OFF (default)",
+                                  "children": [
+                                    { "name": "Nonrepeatable read, phantom" }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
                         { "name": "Repeatable read" },
-                        { "name": "Snapshot" },
+                        {
+                          "name": "Snapshot",
+                          "children": [
+                            { "name": "Database ALLOW_SNAPSHOT_ISOLATION ON" },
+                            { "name": "2005+" }
+                          ]
+                        },
                         { "name": "Serializable" }
                       ]
                     }
@@ -398,6 +432,15 @@
                 { "name": "Key" },
                 { "name": "Default" },
                 { "name": "Synonym" },
+                { "name": "Sequence" },
+                {
+                  "name": "Variable",
+                  "children": [
+                    { "name": "Local Variable (@)" },
+                    { "name": "Global Variable (@@)" }
+                  ]
+                },
+                { "name": "Common Table Expression (CTE)" },
                 { "name": "Cursor" },
                 { "name": "Collation" },
                 { "name": "Login" },
@@ -640,6 +683,67 @@
             {
               "name": "Versions",
               "children": [
+                {
+                  "name": "SQL Server 2005",
+                  "children": [
+                    { "name": "SSIS" },
+                    { "name": "SSRS" },
+                    { "name": "SSAS" },
+                    { "name": "Common Language Runtime (CLR)" },
+                    { "name": "XML" },
+                    { "name": "Data Service (SOAP)" },
+                    { "name": "Service Broker" },
+                    { "name": "Common Table Expression (CTE)" },
+                    { "name": "Dynamic Management View (DMV)" },
+                    { "name": "Database Mirroring (SP1)" },
+                    { "name": "TRY/CATCH" }
+                  ]
+                },
+                {
+                  "name": "SQL Server 2008",
+                  "children": [
+                    { "name": "Always On" },
+                    { "name": "FILESTREAM" },
+                    { "name": "Integrated Full-Text Search (iFTS)" },
+                    {
+                      "name": "Spatial Types",
+                      "children": [
+                        { "name": "GEOMETRY" },
+                        { "name": "GEOGRAPHY" }
+                      ]
+                    },
+                    { "name": "Transparent Data Encryption (TDE)" },
+                    { "name": "IntelliSense" },
+                    { "name": "SSRS Charting (acquired Dundas charts)" }
+                  ]
+                },
+                {
+                  "name": "SQL Server 2012",
+                  "children": [
+                    { "name": "Columnstore Index" },
+                    { "name": "Sequence" },
+                    { "name": "THROW" }
+                  ]
+                },
+                {
+                  "name": "SQL Server 2014",
+                  "children": [
+                    { "name": "In-memory Table" }
+                  ]
+                },
+                {
+                  "name": "SQL Server 2016",
+                  "children": [
+                    { "name": "JSON" },
+                    { "name": "Ploybase (connector to BigData)" },
+                    { "name": "Always Encrypted" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Editions",
+              "children": [
                 { "name": "Express" },
                 { "name": "BI" },
                 { "name": "Web" },
@@ -697,7 +801,12 @@
             {
               "name": "Business Intelligence (BI)",
               "children": [
-                { "name": "SQL Server Integration Service (SSIS)" },
+                {
+                  "name": "SQL Server Integration Service (SSIS)",
+                  "children": [
+                    { "name": "Extract-Transform-Load (ETL)" }
+                  ]
+                },
                 { "name": "SQL Server Reporting Service (SSRS)" },
                 { "name": "SQL Server Analysis Service (SSAS)" }
               ]
