@@ -19,7 +19,7 @@ http://www.cnblogs.com/unruledboy/p/DatabaseStack.html
 # 数据库技术栈
 比较全面的数据库技术栈，包括MS SQL Server、Azure等。
 
-![Image of The Database Stack](https://raw.githubusercontent.com/unruledboy/DatabaseStack/master/preview.png)
+![Image of The Database Stack](preview.zh-cn.png)
 
 # 为什么？
 大家是否想过：
@@ -36,7 +36,7 @@ http://www.cnblogs.com/unruledboy/p/DatabaseStack.html
 
 您可以点击下面链接查看交互式预览图(用鼠标移动/缩放/点击节点打开相关网站)：
 
-https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm 
+https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=zh-cn
 
 <!--BUILD_START-->
 
