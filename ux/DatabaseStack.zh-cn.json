@@ -1,11 +1,11 @@
 ﻿{
-  "name": "Database",
+  "name": "数据库",
   "children": [
     {
-      "name": "RDBMS",
+      "name": "关系型数据库系统",
       "children": [
         {
-          "name": "Simple",
+          "name": "简单",
           "children": [
             {
               "name": "dBase ;-)",
@@ -31,42 +31,42 @@
           ]
         },
         {
-          "name": "Basics",
+          "name": "基本知识",
           "children": [
             {
               "name": "Edgar F. Codd",
               "url": "https://en.wikipedia.org/wiki/Edgar_F._Codd"
             },
             {
-              "name": "Object/relational mapping (O/RM)",
+              "name": "对象关系映射 (O/RM)",
               "url": "https://en.wikipedia.org/wiki/Object-relational_mapping"
             },
             {
-              "name": "Normalisation",
+              "name": "数据库规范化",
               "url": "https://en.wikipedia.org/wiki/Database_normalization",
               "children": [
                 {
-                  "name": "Normal Form",
+                  "name": "范式",
                   "children": [
-                    { "name": "First Normal Form (1NF)" },
-                    { "name": "Second Normal Form (2NF)" },
-                    { "name": "Third Normal Form (3NF)" }
+                    { "name": "第一范式 (1NF)" },
+                    { "name": "第二范式 (2NF)" },
+                    { "name": "第三范式 (3NF)" }
                   ]
                 }
               ]
             },
             {
-              "name": "Transaction",
+              "name": "事务",
               "url": "https://en.wikipedia.org/wiki/Database_transaction",
               "children": [
                 {
                   "name": "ACID",
                   "url": "https://en.wikipedia.org/wiki/ACID",
                   "children": [
-                    { "name": "Atomicity" },
-                    { "name": "Consistency" },
-                    { "name": "Isolation" },
-                    { "name": "Durability" }
+                    { "name": "原子性" },
+                    { "name": "一致性" },
+                    { "name": "隔离性/独立性" },
+                    { "name": "持久性" }
                   ]
                 }
               ]
@@ -89,7 +89,7 @@
               ]
             },
             {
-              "name": "Storage Engine",
+              "name": "存储引擎",
               "children": [
                 { "name": "Transaction Services" },
                 { "name": "File Manager" },
@@ -116,7 +116,7 @@
               ]
             },
             {
-              "name": "Relational Engine",
+              "name": "关系引擎",
               "children": [
                 {
                   "name": "Query Processing",
@@ -149,7 +149,7 @@
               ]
             },
             {
-              "name": "Communication",
+              "name": "通讯",
               "children": [
                 { "name": "SQL Server Network Interface (SNI)" },
                 { "name": "Tabular Data Stream (TDS)" },
@@ -166,25 +166,25 @@
               ]
             },
             {
-              "name": "Core Concepts",
+              "name": "概念",
               "children": [
                 {
-                  "name": "Instance",
+                  "name": "实例",
                   "children": [
-                    { "name": "Default" },
-                    { "name": "Named" },
-                    { "name": "Alias" }
+                    { "name": "默认" },
+                    { "name": "命名" },
+                    { "name": "别名" }
                   ]
                 },
                 {
-                  "name": "Port",
+                  "name": "端口",
                   "children": [
-                    { "name": "Default: 1433" },
-                    { "name": "Dynamic" }
+                    { "name": "默认: 1433" },
+                    { "name": "动态" }
                   ]
                 },
                 {
-                  "name": "Transaction",
+                  "name": "事务",
                   "children": [
                     {
                       "name": "ACID",
@@ -196,16 +196,16 @@
                       ]
                     },
                     {
-                      "name": "Types",
+                      "name": "类型",
                       "children": [
                         {
-                          "name": "Implicit",
+                          "name": "隐式",
                           "children": [
-                            { "name": "single UPDATE/DELETE" }
+                            { "name": "单个 UPDATE/DELETE" }
                           ]
                         },
                         {
-                          "name": "Explicit",
+                          "name": "显式",
                           "children": [
                             { "name": "BEGIN/COMMIT/ROLLBACK" }
                           ]
@@ -214,18 +214,18 @@
                     },
                     { "name": "Checkpoint" },
                     {
-                      "name": "Isolation Levels (low to high)",
+                      "name": "隔离级别 (从低到高)",
                       "url": "https://technet.microsoft.com/en-us/library/ms189122(v=sql.105).aspx",
                       "children": [
                         {
                           "name": "Read uncommitted",
                           "children": [
-                            { "name": "dirty read" },
-                            { "name": "same as NOLOCK hint" }
+                            { "name": "脏读" },
+                            { "name": "和NOLOCK一样" }
                           ]
                         },
                         {
-                          "name": "Read committed (default)",
+                          "name": "Read committed (默认)",
                           "children": [
                             {
                               "name": "READ_COMMITTED_SNAPSHOT",
@@ -260,13 +260,13 @@
                   ]
                 },
                 {
-                  "name": "Concurrency",
+                  "name": "并发性",
                   "children": [
                     {
                       "name": "Lock",
                       "children": [
-                        { "name": "Optimistic" },
-                        { "name": "Pessimistic" },
+                        { "name": "乐观锁" },
+                        { "name": "悲观锁" },
                         { "name": "Exclusive" },
                         { "name": "Shared" }
                       ]
@@ -274,54 +274,54 @@
                     { "name": "Wait" },
                     { "name": "Latch" },
                     {
-                      "name": "Deadlock",
+                      "name": "死锁",
                       "children": [
                         { "name": "Kill" }
                       ]
                     },
                     { "name": "sync/async" },
                     { "name": "Blocking" },
-                    { "name": "Row versioning" }
+                    { "name": "行版本" }
                   ]
                 }
               ]
             },
             {
-              "name": "Core Objects",
+              "name": "对象",
               "children": [
                 {
-                  "name": "Database",
+                  "name": "数据库",
                   "children": [
                     {
-                      "name": "Recovery Models",
+                      "name": "恢复模式",
                       "children": [
                         {
-                          "name": "Purpose",
+                          "name": "作用",
                           "children": [
-                            { "name": "Backup transaction log" },
-                            { "name": "Affect backup types" },
-                            { "name": "Affect replication types" }
+                            { "name": "备份事务日志" },
+                            { "name": "影响备份类型" },
+                            { "name": "影响复制类型" }
                           ]
                         },
                         {
-                          "name": "Models",
+                          "name": "模式",
                           "children": [
                             {
-                              "name": "Simple",
+                              "name": "简单",
                               "children": [
                                 { "name": "Not point-in-time recovery" },
                                 { "name": "Minimum space" }
                               ]
                             },
                             {
-                              "name": "Full (default)",
+                              "name": "完整 (默认)",
                               "children": [
                                 { "name": "Point-in-time recovery" },
                                 { "name": "Large space" }
                               ]
                             },
                             {
-                              "name": "Bulk logged",
+                              "name": "大容量日志恢复",
                               "children": [
                                 { "name": "Point-in-time recovery" },
                                 { "name": "No bulk operation logged" },
@@ -333,12 +333,12 @@
                       ]
                     },
                     {
-                      "name": "Compatibility Levels",
+                      "name": "兼容级别",
                       "children": [
                         {
-                          "name": "Version Number",
+                          "name": "版本",
                           "children": [
-                            { "name": "Effectively SQL Server version number" },
+                            { "name": "实际上就是SQL Server的版本" },
                             { "name": "@@VERSION" }
                           ]
                         },
@@ -350,60 +350,60 @@
                         { "name": "80: SQL Server 2000" }
                       ]
                     },
-                    { "name": "Encryption" },
-                    { "name": "Copy" }
+                    { "name": "加密" },
+                    { "name": "复制" }
                   ]
                 },
                 {
-                  "name": "Table",
+                  "name": "表",
                   "children": [
                     {
-                      "name": "Standard",
+                      "name": "标准",
                       "children": [
-                        { "name": "Partition" },
-                        { "name": "Compression" }
+                        { "name": "分区" },
+                        { "name": "压缩" }
                       ]
                     },
-                    { "name": "Table Variable" },
+                    { "name": "表变量" },
                     {
-                      "name": "Temp Table",
+                      "name": "临时表",
                       "children": [
-                        { "name": "Local" },
-                        { "name": "Global" }
+                        { "name": "本地" },
+                        { "name": "全局" }
                       ]
                     },
                     { "name": "FileTable" }
                   ]
                 },
                 {
-                  "name": "View",
+                  "name": "视图",
                   "children": [
-                    { "name": "Standard" },
-                    { "name": "Indexed" },
-                    { "name": "Partitioned" }
+                    { "name": "标准" },
+                    { "name": "索引" },
+                    { "name": "分区" }
                   ]
                 },
-                { "name": "Stored Procedure (SP)" },
+                { "name": "存储过程 (SP)" },
                 {
-                  "name": "Function (FN)",
+                  "name": "函数 (FN)",
                   "children": [
                     { "name": "Table-valued Function" },
                     { "name": "Scalar-valued Function" }
                   ]
                 },
                 {
-                  "name": "Data Type",
+                  "name": "数据类型",
                   "children": [
                     {
-                      "name": "Types",
+                      "name": "类型",
                       "children": [
-                        { "name": "System Type" },
-                        { "name": "User-defined Type (UDT)" }
+                        { "name": "系统类型" },
+                        { "name": "用户定义类型 (UDT)" }
                       ]
                     },
-                    { "name": "Conversion" },
-                    { "name": "Precedence" },
-                    { "name": "Synonym" },
+                    { "name": "转换" },
+                    { "name": "优先级" },
+                    { "name": "同义词" },
                     { "name": "Precision/Scale/Length" },
                     { "name": "XML" },
                     { "name": "JSON" },
@@ -411,24 +411,24 @@
                   ]
                 },
                 {
-                  "name": "Index",
+                  "name": "索引",
                   "children": [
                     {
-                      "name": "Index Types",
+                      "name": "索引类型",
                       "children": [
-                        { "name": "Clustered Index" },
-                        { "name": "Non-clustered Index" }
+                        { "name": "聚集索引" },
+                        { "name": "非聚集索引" }
                       ]
                     },
                     {
-                      "name": "Index Setting",
+                      "name": "索引设置",
                       "children": [
                         { "name": "Include" },
                         { "name": "Filter" }
                       ]
                     },
                     {
-                      "name": "Index Management",
+                      "name": "索引管理",
                       "children": [
                         { "name": "Rebuild" },
                         { "name": "Reorganise" },
@@ -440,7 +440,7 @@
                   ]
                 },
                 {
-                  "name": "Column",
+                  "name": "列",
                   "children": [
                     {
                       "name": "columnstore",
@@ -453,10 +453,10 @@
                 },
                 { "name": "Schema" },
                 {
-                  "name": "Trigger",
+                  "name": "触发器",
                   "children": [
                     {
-                      "name": "Table Trigger",
+                      "name": "表触发器",
                       "children": [
                         { "name": "BEFORE" },
                         { "name": "FOR/AFTER" },
@@ -471,10 +471,10 @@
                 { "name": "Synonym" },
                 { "name": "Sequence" },
                 {
-                  "name": "Variable",
+                  "name": "变量",
                   "children": [
-                    { "name": "Local Variable (@)" },
-                    { "name": "Global Variable (@@)" }
+                    { "name": "本地变量 (@)" },
+                    { "name": "全局变量 (@@)" }
                   ]
                 },
                 { "name": "Common Table Expression (CTE)" },
@@ -486,7 +486,7 @@
                 { "name": "Server role" },
                 { "name": "Endpoint" },
                 {
-                  "name": "Job",
+                  "name": "作业",
                   "children": [
                     { "name": "Job Agent" },
                     { "name": "Job Activity Monitor" },
@@ -546,7 +546,7 @@
               ]
             },
             {
-              "name": "Standard",
+              "name": "标准",
               "children": [
                 {
                   "name": "ANSI 92"
@@ -554,17 +554,17 @@
               ]
             },
             {
-              "name": "Languages",
+              "name": "语言",
               "children": [
                 {
-                  "name": "Query Language",
+                  "name": "查询语言",
                   "children": [
                     { "name": "T-SQL (Transact-SQL)" },
                     { "name": "MDX (MultiDimensional eXpressions)" }
                   ]
                 },
                 {
-                  "name": "Data Manipulation Language (DML)",
+                  "name": "数据操作语言 (DML)",
                   "children": [
                     {
                       "name": "CRUD",
@@ -589,7 +589,7 @@
                   ]
                 },
                 {
-                  "name": "Data Definition Language (DDL)",
+                  "name": "数据定义语言 (DDL)",
                   "children": [
                     { "name": "CREATE" },
                     { "name": "ALTER" },
@@ -600,14 +600,14 @@
                   ]
                 },
                 {
-                  "name": "Data Control Language (DCL)",
+                  "name": "数据控制语言 (DCL)",
                   "children": [
                     { "name": "GRANT" },
                     { "name": "REVOKE" }
                   ]
                 },
                 {
-                  "name": "Transaction Control Language (TCL)",
+                  "name": "事务控制语言 (TCL)",
                   "children": [
                     { "name": "BEGIN TRANSACTION" },
                     { "name": "COMMIT" },
@@ -618,7 +618,7 @@
               ]
             },
             {
-              "name": "System Databases",
+              "name": "系统数据库",
               "children": [
                 { "name": "master (dbs, logins, configs)" },
                 { "name": "tempdb (temp tables / sps)" },
@@ -628,7 +628,7 @@
               ]
             },
             {
-              "name": "File",
+              "name": "文件",
               "children": [
                 { "name": "primary (MDF)" },
                 { "name": "secondary (NDF)" },
@@ -638,7 +638,7 @@
               ]
             },
             {
-              "name": "Runtime",
+              "name": "运行时",
               "children": [
                 { "name": "Process" },
                 { "name": "Worker" },
@@ -670,7 +670,7 @@
               ]
             },
             {
-              "name": "Replication",
+              "name": "复制",
               "children": [
                 { "name": "Log Shipping" },
                 {
@@ -718,7 +718,7 @@
               ]
             },
             {
-              "name": "Versions",
+              "name": "版本号",
               "children": [
                 {
                   "name": "SQL Server 2005",
@@ -779,7 +779,7 @@
               ]
             },
             {
-              "name": "Editions",
+              "name": "产品版本",
               "children": [
                 { "name": "Express" },
                 { "name": "BI" },
@@ -791,7 +791,7 @@
               ]
             },
             {
-              "name": "Management",
+              "name": "管理",
               "children": [
                 { "name": "SQL Server Management Studio (SSMS)" },
                 { "name": "SQL Server Command Line Util (sqlcmd)" },
@@ -802,7 +802,7 @@
               ]
             },
             {
-              "name": "Maintenance",
+              "name": "维护",
               "children": [
                 { "name": "Maintenance Plan" },
                 { "name": "Logs" },
@@ -836,7 +836,7 @@
               ]
             },
             {
-              "name": "Business Intelligence (BI)",
+              "name": "商业智能 (BI)",
               "children": [
                 {
                   "name": "SQL Server Integration Service (SSIS)",
@@ -854,7 +854,7 @@
               ]
             },
             {
-              "name": "Troubleshoot",
+              "name": "调试",
               "children": [
                 {
                   "name": "Dedicated Administrator Connection (DAC)",
@@ -876,7 +876,7 @@
               ]
             },
             {
-              "name": "Performance",
+              "name": "性能",
               "children": [
                 { "name": "Seek" },
                 { "name": "Scan" },
@@ -886,7 +886,7 @@
               ]
             },
             {
-              "name": "Services",
+              "name": "服务",
               "children": [
                 { "name": "SQL Server" },
                 { "name": "SQL Server Browser" },
@@ -894,7 +894,7 @@
               ]
             },
             {
-              "name": "Connectivity",
+              "name": "连接",
               "children": [
                 { "name": "ADO.NET" },
                 { "name": "ODBC" },
@@ -902,7 +902,7 @@
               ]
             },
             {
-              "name": "Security",
+              "name": "安全",
               "children": [
                 { "name": "Access Control" },
                 { "name": "SQL Inject" },
@@ -934,7 +934,7 @@
       ]
     },
     {
-      "name": "Cloud",
+      "name": "云",
       "children": [
         {
           "name": "Azure",
@@ -963,33 +963,33 @@
       "url": "https://en.wikipedia.org/wiki/NoSQL",
       "children": [
         {
-          "name": "Concepts",
+          "name": "概念",
           "children": [
-            { "name": "XML/JSON based" },
-            { "name": "Eventually Consistency" }
+            { "name": "基于XML/JSON" },
+            { "name": "最终一致性" }
           ]
         },
         {
-          "name": "Limitation",
+          "name": "限制",
           "children": [
             {
-              "name": "CAPS/Brewer's theorem",
+              "name": "CAPS/Brewer理论",
               "url": "https://en.wikipedia.org/wiki/CAP_theorem",
               "children": [
-                { "name": "Consistency" },
-                { "name": "Availability" },
-                { "name": "Partition tolerance" }
+                { "name": "一致性" },
+                { "name": "可用性" },
+                { "name": "网络分区容忍性" }
               ]
             },
-            { "name": "Lack of join" },
-            { "name": "Lack of true ACID" }
+            { "name": "缺乏关联" },
+            { "name": "缺乏真正的ACID" }
           ]
         },
         {
-          "name": "Types",
+          "name": "类型",
           "children": [
             {
-              "name": "Column",
+              "name": "列",
               "children": [
                 {
                   "name": "Cassandra",
@@ -1002,7 +1002,7 @@
               ]
             },
             {
-              "name": "Key/Value",
+              "name": "键值",
               "children": [
                 {
                   "name": "CouchDB",
@@ -1023,7 +1023,7 @@
               ]
             },
             {
-              "name": "Document",
+              "name": "文档",
               "children": [
                 {
                   "name": "Apache CouchDB",
@@ -1044,7 +1044,7 @@
               ]
             },
             {
-              "name": "Graph",
+              "name": "图形关系",
               "children": [
                 {
                   "name": "Neo4J",
@@ -1053,7 +1053,7 @@
               ]
             },
             {
-              "name": "Object",
+              "name": "对象",
               "children": [
                 {
                   "name": "ObjectStore",

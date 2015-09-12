@@ -1,65 +1,68 @@
 # SQL Monitor
-Want to manages sql server performance? Check out SQL Monitor, it can monitor sql server processes and jobs, analyze performance, analyse system, object version control, view executing sql query, kill process / job, object explorer, database shrink/log truncate/backup/detach/attach etc.:
+想优化SQL Server的功能吗？看看SQL Monitor吧！它可以管理SQL Server进程和作业、分析系统、版本控制、建议性能改进等。
 
 https://github.com/unruledboy/SQLMonitor
 
 
-# Overflow Stack
-The overflow stack family (Web Front End Stack, Database Stack, .NET Stack etc.):
+# 爆栈
+系统开发技术栈、Web前端开发技术栈、数据库技术栈、.NET技术栈！
 http://overflowstack.github.io
 
-# Localization
-中文: 
+
+# 本地化
+English: 
+https://github.com/unruledboy/DatabaseStack/
+
+中文博客: 
 http://www.cnblogs.com/unruledboy/p/DatabaseStack.html
 
-# DatabaseStack
-database technology stack, including MS SQL Server, Azure etc.
+# 数据库技术栈
+比较全面的数据库技术栈，包括MS SQL Server、Azure等。
 
 ![Image of The Database Stack](https://raw.githubusercontent.com/unruledboy/DatabaseStack/master/preview.png)
 
-# What and why?
-Have you ever wondered:
-* what technologies database server really includes? 
-* how many do I possess?
+# 为什么？
+大家是否想过：
+* 数据库开发究竟包含哪些技术呢？
+* 我所掌握的技术这个子集，在数据库技术大系这个超集里面占的比例是多少呢？
+* 我究竟还没有掌握多少数据库技术呢？
+* 面试的时候会考哪些技术呢？
 
+那么，数据库开发是否也应该有这样的技术栈概览图呢？搜索了很久，没有找到一个符合我要求的“较为全面”地表述数据库技术大系的图表。所以我们自行设计了这个数据库技术栈。
 
-I could not find a really comprehensive diagram that shows the database technology stack, so I come up with my own version.
+这个图表里的分类未必准确，相关技术也难免会有遗漏，欢迎大家指点以便不断改进。
 
-There might be issues here and there, like the category, the individual ones, but the beautity is you can modify it as you want.
+数据库技术实在太繁多限于篇幅，这里没有罗列一些技术。
 
-
-
-# The Database Stack
-
-You can have a graphical preview here (use mouse to move / zoom): 
+您可以点击下面链接查看交互式预览图(用鼠标移动/缩放/点击节点打开相关网站)：
 
 https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm 
 
 <!--BUILD_START-->
 
-- Database
-	- RDBMS
-		- Simple
+- 数据库
+	- 关系型数据库系统
+		- 简单
 			- [dBase ;-)](https://en.wikipedia.org/wiki/DBase)
 			- Foxbase ;-)
 			- [FoxPro ;-)](https://en.wikipedia.org/wiki/FoxPro)
 			- [Visual FoxPro ;-)](https://msdn.microsoft.com/en-us/vfoxpro/bb190225.aspx)
 			- [Access](https://products.office.com/en-us/access)
 			- [Sqlite](https://www.sqlite.org/)
-		- Basics
+		- 基本知识
 			- [Edgar F. Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd)
-			- [Object/relational mapping (O/RM)](https://en.wikipedia.org/wiki/Object-relational_mapping)
-			- [Normalisation](https://en.wikipedia.org/wiki/Database_normalization)
-				- Normal Form
-					- First Normal Form (1NF)
-					- Second Normal Form (2NF)
-					- Third Normal Form (3NF)
-			- [Transaction](https://en.wikipedia.org/wiki/Database_transaction)
+			- [对象关系映射 (O/RM)](https://en.wikipedia.org/wiki/Object-relational_mapping)
+			- [数据库规范化](https://en.wikipedia.org/wiki/Database_normalization)
+				- 范式
+					- 第一范式 (1NF)
+					- 第二范式 (2NF)
+					- 第三范式 (3NF)
+			- [事务](https://en.wikipedia.org/wiki/Database_transaction)
 				- [ACID](https://en.wikipedia.org/wiki/ACID)
-					- Atomicity
-					- Consistency
-					- Isolation
-					- Durability
+					- 原子性
+					- 一致性
+					- 隔离性/独立性
+					- 持久性
 		- [MS SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/)
 			- SQL OS
 				- Memory Management
@@ -68,7 +71,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Exception handling
 				- Schedulers
 				- InterOp
-			- Storage Engine
+			- 存储引擎
 				- Transaction Services
 				- File Manager
 				- Data File
@@ -83,7 +86,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Lazy Writer
 					- Checkpoint
 					- Log Sequence Number (LSN)
-			- Relational Engine
+			- 关系引擎
 				- Query Processing
 					- Parser
 					- Optimizer
@@ -100,7 +103,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Thread and Task Management
 				- Buffer Management
 				- Distributed Query Processing
-			- Communication
+			- 通讯
 				- SQL Server Network Interface (SNI)
 				- Tabular Data Stream (TDS)
 				- Protocols
@@ -109,31 +112,31 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Shared memory
 					- Virtual Interface Adapter (VIA, discontinued from 2012)
 					- Web Services
-			- Core Concepts
-				- Instance
-					- Default
-					- Named
-					- Alias
-				- Port
-					- Default: 1433
-					- Dynamic
-				- Transaction
+			- 概念
+				- 实例
+					- 默认
+					- 命名
+					- 别名
+				- 端口
+					- 默认: 1433
+					- 动态
+				- 事务
 					- ACID
 						- Atomic
 						- Consistent
 						- Isolated
 						- Durable
-					- Types
-						- Implicit
-							- single UPDATE/DELETE
-						- Explicit
+					- 类型
+						- 隐式
+							- 单个 UPDATE/DELETE
+						- 显式
 							- BEGIN/COMMIT/ROLLBACK
 					- Checkpoint
-					- [Isolation Levels (low to high)](https://technet.microsoft.com/en-us/library/ms189122(v=sql.105).aspx)
+					- [隔离级别 (从低到高)](https://technet.microsoft.com/en-us/library/ms189122(v=sql.105).aspx)
 						- Read uncommitted
-							- dirty read
-							- same as NOLOCK hint
-						- Read committed (default)
+							- 脏读
+							- 和NOLOCK一样
+						- Read committed (默认)
 							- READ_COMMITTED_SNAPSHOT
 								- ON
 									- repeatable read
@@ -144,40 +147,40 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 							- Database ALLOW_SNAPSHOT_ISOLATION ON
 							- 2005+
 						- Serializable
-				- Concurrency
+				- 并发性
 					- Lock
-						- Optimistic
-						- Pessimistic
+						- 乐观锁
+						- 悲观锁
 						- Exclusive
 						- Shared
 					- Wait
 					- Latch
-					- Deadlock
+					- 死锁
 						- Kill
 					- sync/async
 					- Blocking
-					- Row versioning
-			- Core Objects
-				- Database
-					- Recovery Models
-						- Purpose
-							- Backup transaction log
-							- Affect backup types
-							- Affect replication types
-						- Models
-							- Simple
+					- 行版本
+			- 对象
+				- 数据库
+					- 恢复模式
+						- 作用
+							- 备份事务日志
+							- 影响备份类型
+							- 影响复制类型
+						- 模式
+							- 简单
 								- Not point-in-time recovery
 								- Minimum space
-							- Full (default)
+							- 完整 (默认)
 								- Point-in-time recovery
 								- Large space
-							- Bulk logged
+							- 大容量日志恢复
 								- Point-in-time recovery
 								- No bulk operation logged
 								- Save space
-					- Compatibility Levels
-						- Version Number
-							- Effectively SQL Server version number
+					- 兼容级别
+						- 版本
+							- 实际上就是SQL Server的版本
 							- @@VERSION
 						- 130: SQL  Server 2016
 						- 120: SQL  Server 2014
@@ -185,56 +188,56 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- 100: SQL  Server 2008
 						- 90: SQL  Server 2005
 						- 80: SQL Server 2000
-					- Encryption
-					- Copy
-				- Table
-					- Standard
-						- Partition
-						- Compression
-					- Table Variable
-					- Temp Table
-						- Local
-						- Global
+					- 加密
+					- 复制
+				- 表
+					- 标准
+						- 分区
+						- 压缩
+					- 表变量
+					- 临时表
+						- 本地
+						- 全局
 					- FileTable
-				- View
-					- Standard
-					- Indexed
-					- Partitioned
-				- Stored Procedure (SP)
-				- Function (FN)
+				- 视图
+					- 标准
+					- 索引
+					- 分区
+				- 存储过程 (SP)
+				- 函数 (FN)
 					- Table-valued Function
 					- Scalar-valued Function
-				- Data Type
-					- Types
-						- System Type
-						- User-defined Type (UDT)
-					- Conversion
-					- Precedence
-					- Synonym
+				- 数据类型
+					- 类型
+						- 系统类型
+						- 用户定义类型 (UDT)
+					- 转换
+					- 优先级
+					- 同义词
 					- Precision/Scale/Length
 					- XML
 					- JSON
 					- Spatial (CLR)
-				- Index
-					- Index Types
-						- Clustered Index
-						- Non-clustered Index
-					- Index Setting
+				- 索引
+					- 索引类型
+						- 聚集索引
+						- 非聚集索引
+					- 索引设置
 						- Include
 						- Filter
-					- Index Management
+					- 索引管理
 						- Rebuild
 						- Reorganise
 						- Disable
 						- Enable
 						- Drop
-				- Column
+				- 列
 					- columnstore
 						- Suitable for Data warehouse
 					- NTFS FileStream
 				- Schema
-				- Trigger
-					- Table Trigger
+				- 触发器
+					- 表触发器
 						- BEFORE
 						- FOR/AFTER
 						- INSTEAD OF
@@ -243,9 +246,9 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Default
 				- Synonym
 				- Sequence
-				- Variable
-					- Local Variable (@)
-					- Global Variable (@@)
+				- 变量
+					- 本地变量 (@)
+					- 全局变量 (@@)
 				- Common Table Expression (CTE)
 				- Cursor
 				- Collation
@@ -254,7 +257,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Rule
 				- Server role
 				- Endpoint
-				- Job
+				- 作业
 					- Job Agent
 					- Job Activity Monitor
 					- Alert
@@ -284,13 +287,13 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- Service
 						- Dialog
 						- Conversation
-			- Standard
+			- 标准
 				- ANSI 92
-			- Languages
-				- Query Language
+			- 语言
+				- 查询语言
 					- T-SQL (Transact-SQL)
 					- MDX (MultiDimensional eXpressions)
-				- Data Manipulation Language (DML)
+				- 数据操作语言 (DML)
 					- CRUD
 						- Create (INSERT)
 						- Retrieve (SELECT)
@@ -303,34 +306,34 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- READTEXT
 					- BULK INSERT
 					- EXECUTE
-				- Data Definition Language (DDL)
+				- 数据定义语言 (DDL)
 					- CREATE
 					- ALTER
 					- DROP
 					- TRUNCATE
 					- RESTORE
 					- RECONFIGURE
-				- Data Control Language (DCL)
+				- 数据控制语言 (DCL)
 					- GRANT
 					- REVOKE
-				- Transaction Control Language (TCL)
+				- 事务控制语言 (TCL)
 					- BEGIN TRANSACTION
 					- COMMIT
 					- ROLLBACK
 					- SAVE TRANSACTION
-			- System Databases
+			- 系统数据库
 				- master (dbs, logins, configs)
 				- tempdb (temp tables / sps)
 				- msdb (jobs/alerts/backups)
 				- model (template for new db)
 				- resource (invisible, system objects)
-			- File
+			- 文件
 				- primary (MDF)
 				- secondary (NDF)
 				- log (LDF)
 				- File/Filegroup
 				- Auto Grow
-			- Runtime
+			- 运行时
 				- Process
 				- Worker
 				- Connection
@@ -346,7 +349,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Full Text Search (FTS)
 					- Integrated Full Text Search (iFTS)
 				- Trace flags
-			- Replication
+			- 复制
 				- Log Shipping
 				- Publish/Subscribe
 					- Transactional
@@ -366,7 +369,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 						- Active/Active
 						- Active/Passive
 				- Snapshot
-			- Versions
+			- 版本号
 				- SQL Server 2005
 					- SSIS
 					- SSRS
@@ -399,7 +402,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- JSON
 					- Ploybase (connector to BigData)
 					- Always Encrypted
-			- Editions
+			- 产品版本
 				- Express
 				- BI
 				- Web
@@ -407,11 +410,11 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Enterprise
 				- Datacenter
 				- Local DB
-			- Management
+			- 管理
 				- SQL Server Management Studio (SSMS)
 				- SQL Server Command Line Util (sqlcmd)
 				- [SQL Monitor ;-)](https://github.com/unruledboy/SQLMonitor)
-			- Maintenance
+			- 维护
 				- Maintenance Plan
 				- Logs
 				- Database Mail
@@ -429,13 +432,13 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Bulk Copy (bcp command line)
 				- Resource governor
 				- Facets
-			- Business Intelligence (BI)
+			- 商业智能 (BI)
 				- SQL Server Integration Service (SSIS)
 					- Extract-Transform-Load (ETL)
 				- SQL Server Reporting Service (SSRS)
 				- SQL Server Analysis Service (SSAS)
 					- OLAP
-			- Troubleshoot
+			- 调试
 				- Dedicated Administrator Connection (DAC)
 					- ADMIN:INSTANCE
 					- SQL Browser service must be running
@@ -445,21 +448,21 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 					- Severity Levels
 					- Error Log
 					- sys.xp_readerrorlog
-			- Performance
+			- 性能
 				- Seek
 				- Scan
 				- Fragmentation
 				- Partitioning
 				- Database Engine Tuning Advisor
-			- Services
+			- 服务
 				- SQL Server
 				- SQL Server Browser
 				- SQL Server Agent
-			- Connectivity
+			- 连接
 				- ADO.NET
 				- ODBC
 				- JDBC
-			- Security
+			- 安全
 				- Access Control
 				- SQL Inject
 				- Backup
@@ -468,7 +471,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 		- [PostgreSQL](http://www.postgresql.org/)
 		- [Informix](http://www.ibm.com/software/data/informix)
 		- [DB2](http://www.ibm.com/software/data/db2)
-	- Cloud
+	- 云
 		- [Azure](https://azure.microsoft.com)
 			- Database
 			- Redis Cache
@@ -481,33 +484,33 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 			- StorSimple
 			- SQL Data Warehouse
 	- [NoSQL](https://en.wikipedia.org/wiki/NoSQL)
-		- Concepts
-			- XML/JSON based
-			- Eventually Consistency
-		- Limitation
-			- [CAPS/Brewer's theorem](https://en.wikipedia.org/wiki/CAP_theorem)
-				- Consistency
-				- Availability
-				- Partition tolerance
-			- Lack of join
-			- Lack of true ACID
-		- Types
-			- Column
+		- 概念
+			- 基于XML/JSON
+			- 最终一致性
+		- 限制
+			- [CAPS/Brewer理论](https://en.wikipedia.org/wiki/CAP_theorem)
+				- 一致性
+				- 可用性
+				- 网络分区容忍性
+			- 缺乏关联
+			- 缺乏真正的ACID
+		- 类型
+			- 列
 				- [Cassandra](http://cassandra.apache.org/)
 				- [HBase](http://hbase.apache.org/)
-			- Key/Value
+			- 键值
 				- [CouchDB](http://couchdb.apache.org/)
 				- [AWS Dynamo](https://aws.amazon.com/dynamodb/)
 				- [MemcacheDB](http://memcachedb.org/)
 				- [Redis](http://redis.io/)
-			- Document
+			- 文档
 				- [Apache CouchDB](http://couchdb.apache.org/)
 				- [Couchbase](http://www.couchbase.com/)
 				- [Azure DocumentDB](http://azure.microsoft.com/en-us/services/documentdb/)
 				- [MongoDB](https://www.mongodb.org/)
-			- Graph
+			- 图形关系
 				- [Neo4J](http://neo4j.com/)
-			- Object
+			- 对象
 				- [ObjectStore](http://www.objectstore.com/)
 
 <!--BUILD_END-->	

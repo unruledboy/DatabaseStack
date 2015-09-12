@@ -5,19 +5,31 @@
 var express = require('express');
 var path = require('path');
 var Promise = require("bluebird");
+var request = require("request");
+var async = require("async");
 var fs = Promise.promisifyAll(require('fs'));
 
 var app = new express();
 var queueReady = ["server"];
-var port = process.env.PORT || 3000;
-var httpServer = "http://127.0.0.1:" + port + "/";
 
-var pageWidth = 3400; // Magic number!
+var pageWidth = 3700; // Magic number!
 var pageHeight = 5100;
+
+var config = {
+    port: 3000, 
+    update_existed_stargazers: false,
+	locale: process.env.locale || '',
+	rawLocale: process.env.locale || ''
+}
+var httpServer = "http://127.0.0.1:" + config.port + "/";
+
+if (config.locale)
+	config.locale = '.' + config.locale;
 
 String.prototype.repeat = function(count) {
     return new Array(count + 1).join(this);
 }
+
 /**
  * Use to build a promise for some fucking async api.
  * @param  object object       
@@ -52,10 +64,11 @@ var buildReadme = function buildReadme(object, deep) {
     var deeper = deep + 1;
     var deepString = "\t".repeat(deep) + "- ";
     var ret = [];
-    ret.push((function(deepString, name, url) {
+    ret.push((function(deepString, name, url, github) {
         var haveUrl = !!url;
-        return deepString + (haveUrl ? "[" : "") + object.name + (haveUrl ? "](" + url + ")" : "");
-    })(deepString, object.name, object.url));
+        var haveGitHub = !!github;
+        return deepString + (haveUrl ? "[" : "") + object.name + (haveUrl ? "](" + url + ")" : "") + (haveGitHub ? " [\[GitHub\]](" + github + ")" : "");
+    })(deepString, object.name, object.url, object.github));
     if (object.children) {
         object.children.map(function(value, index) {
             ret.push(buildReadme(value, deeper));
@@ -66,49 +79,111 @@ var buildReadme = function buildReadme(object, deep) {
 
 var actions = {
     /**
+     * Update the stargazers of the GitHub repo
+     * Be careful! There have the rate limit!
+     * @see  https://developer.github.com/v3/#increasing-the-unauthenticated-rate-limit-for-oauth-applications
+     * @return Promise<any>
+     */
+    updatestargazers: function updatestargazers() {
+        return new Promise(function(resolve, reject) {
+            var originalData = JSON.parse(fs.readFileSync('./ux/DatabaseStack' + config.locale + '.json', "utf-8")); // Require will lock the file.
+            var getGitHubApi = function(github) {
+                var githubArray = github.split("/");
+                // I want a sprintf T_T
+                return "https://api.github.com/repos/" + githubArray[3] + "/" + githubArray[4];
+            };
+            var q = async.queue(function(object, callback) {
+                if (!object.github || (!config.update_existed_stargazers && object.stargazers)) {
+                    callback(false);
+                    return;
+                }
+                var githubUrl = getGitHubApi(object.github);
+                console.log("Getting " + githubUrl);
+                request({
+                    url: githubUrl,
+                    headers: {
+                        "User-Agent": "https://github.com/unruledboy/DatabaseStack" // GitHub required user-agent
+                    }
+                }, function(err, res, body) {
+                    if (!err && res.statusCode == 200) {
+                        var json = JSON.parse(body);
+                        if (json === null) {
+                            callback(false);
+                            return;
+                        }
+                        object.stargazers = json.stargazers_count;
+                        callback(true);
+                    } else {
+                        if (res.statusCode == 403) { // Out of API limit!
+                            console.error("Out of GitHub API limit!");
+                            console.error("The limit will be reset when " + new Date(res.headers['x-ratelimit-reset'] * 1000));
+                            q.kill();
+                            reject("Out of GitHub API limit!");
+                        }
+                        callback(false);
+                    }
+                });
+
+            }, 5);
+            var addQueue = function addQueue(object) {
+                q.push(object, function(err) {
+                    if (err) console.log(object.name + " = " + object.stargazers);
+                });
+                if (object.children) {
+                    object.children.forEach(function(val) {
+                        addQueue(val);
+                    });
+                }
+            };
+            addQueue(originalData);
+            q.push({ // For some reason, the ``drain`` will not be called.
+                noRequest: true
+            }, function() {
+                fs.writeFileAsync('./ux/DatabaseStack' + config.locale + '.json', JSON.stringify(originalData), "utf-8").then(function() {
+                    resolve();
+                });
+            });
+            return q;
+        })
+    },
+    /**
      * For running phantomjs to take a screenshot for the webpage
      * @return Promise<any>
      */
     phantomjs: function phantomjs() {
-        return new Promise(function(resolve, reject) {
-            var phantom = require('phantom');
-
-            var ph;
-            var page;
-            promisify(phantom);
-
-                // What the fucking API
-            return phantom.createAsync().then(function(phantom) {
-                ph = phantom;
-                promisify(ph);
-                console.log("Created Phantomjs");
-                return ph.createPageAsync();
-            }).then(function(pg) {
-                page = pg;
-                promisify(pg);
-                return page.setAsync('viewportSize', {
-                    width: pageWidth,
-                    height: pageHeight
-                });
-            }).then(function() {
-                console.log("Set viewportSize");
-                return page.openAsync(httpServer);
-            }).then(function(status) {
-                console.log("Rendered HTML, the image will be saved after 2 seconds.");
-                if (status == "success") {
-                    return Promise.delay(2000);
-                } else {
-                    return reject(status);
-                }
-            }).then(function() {
-                return page.renderAsync(path.join(__dirname, 'preview.png'));
-            }).then(function() {
-                console.log("The image saved successfully!");
-                return resolve();
-            }).then(function() {
-                page.close();
-                ph.exit();
+        var phantom = require('phantom');
+        var ph;
+        var page;
+        promisify(phantom);        
+        // What the fucking API
+        return phantom.createAsync().then(function(phantom) {
+            ph = phantom;
+            promisify(ph);
+            console.log("Created Phantomjs");
+            return ph.createPageAsync();
+        }).then(function(pg) {
+            page = pg;
+            promisify(pg);
+            return page.setAsync('viewportSize', {
+                width: pageWidth,
+                height: pageHeight
             });
+        }).then(function() {
+            console.log("Set viewportSize");
+            return page.openAsync(httpServer);
+        }).then(function(status) {
+            console.log("Rendered HTML, the image will be saved after 2 seconds.");
+            if (status == "success") {
+                return Promise.delay(2000);
+            } else {
+                return reject(status);
+            }
+        }).then(function() {
+            return page.renderAsync(path.join(__dirname, 'preview' + config.locale + '.png'));
+        }).then(function() {
+            console.log("The image saved successfully!");
+            page.close();
+            ph.exit();
         });
     },
 
@@ -117,13 +192,13 @@ var actions = {
      * @return Promise<any>
      */
     readme: function readme() {
-        var json = require('./ux/DatabaseStack.json');
+        var json = require('./ux/DatabaseStack' + config.locale + '.json');
         return Promise.resolve().then(function() {
-            return fs.readFileAsync("./README.md", "utf-8");
+            return fs.readFileAsync('./README' + config.locale + '.md', "utf-8");
         }).then(function(fileContent) {
             var ret = buildReadme(json, 0);
             fileContent = fileContent.replace(/<\!--BUILD_START-->[\d\D]+?<\!--BUILD_END-->/, "{%BuildStart%}")
-            return fs.writeFileAsync("./README.md", fileContent.replace("{%BuildStart%}", "<!--BUILD_START-->\n\n" + ret + "\n\n<!--BUILD_END-->", "utf-8"));
+            return fs.writeFileAsync('./README' + config.locale + '.md', fileContent.replace("{%BuildStart%}", "<!--BUILD_START-->\n\n" + ret + "\n\n<!--BUILD_END-->", "utf-8"));
         }).then(function() {
             console.log('Readme built successfully!');
         })
@@ -135,14 +210,14 @@ var actions = {
     server: function server() {
         return new Promise(function(resolver, reject) {
             return app
-                .set('port', port)
+                .set('port', config.port)
                 .set('view engine', 'html')
                 .use(express.static(path.join(__dirname, '/ux')))
                 .use('/', function(req, res) {
-                    res.redirect('/DatabaseStack.htm');
+                    res.redirect('/DatabaseStack.htm?locale=' + config.rawLocale);
                 })
-                .listen(port, function() {
-                    console.info('Express started on: http://127.0.0.1:' + port);
+                .listen(config.port, function() {
+                    console.info('Express started on: http://127.0.0.1:' + config.port + '?locale=' + config.rawLocale);
                     resolver(app);
                 });
         });
@@ -154,6 +229,11 @@ process.argv.forEach(function(val) {
     if (val in actions) {
         console.info("Task: " + val);
         queue.push(actions[val]());
+    } else if (val[0] == "-" && val.indexOf("=") >= 0) {
+        var obj = val.split("=");
+        var name = obj[0].split("--")[1];
+        var value = obj[1];
+        config[name] = value;
     }
 });
 
