@@ -10,7 +10,7 @@ http://overflowstack.github.io
 
 # Localization
 中文: 
-http://www.cnblogs.com/unruledboy/p/DatabaseStack.html
+https://github.com/unruledboy/DatabaseStack/blob/master/README.zh-cn.md
 
 # DatabaseStack
 database technology stack, including MS SQL Server, Azure etc.
