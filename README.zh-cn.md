@@ -55,8 +55,8 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 			- [数据库规范化](https://en.wikipedia.org/wiki/Database_normalization)
 				- 范式
 					- 第一范式 (1NF)
-					- 第二范式 (2NF)
-					- 第三范式 (3NF)
+					- 第二范式 (1NF)
+					- 第三范式 (1NF)
 			- [事务](https://en.wikipedia.org/wiki/Database_transaction)
 				- [ACID](https://en.wikipedia.org/wiki/ACID)
 					- 原子性
@@ -65,31 +65,28 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 					- 持久性
 		- [MS SQL Server](http://www.microsoft.com/en-us/server-cloud/products/sql-server/)
 			- SQL OS
-				- Memory Management
-				- Buffer Pool
-				- Deadlock detection
-				- Exception handling
-				- Schedulers
-				- InterOp
+				- 内存管理
+				- 缓存池
+				- 死锁检测
+				- 异常处理
+				- 调度器
+				- 交互
 			- 存储引擎
-				- Transaction Services
-				- File Manager
-				- Data File
+				- 事务服务
+				- 文件管理
+				- 数据文件
 				- Extents
 				- Pages
-				- Log File
+				- 日志文件
 					- Write Ahead Log (WAL)
-					- Recovery
-						- Full
-						- Bulk-logged
-					- Dirty Pages
+					- 脏页
 					- Lazy Writer
 					- Checkpoint
 					- Log Sequence Number (LSN)
 			- 关系引擎
 				- Query Processing
-					- Parser
-					- Optimizer
+					- 解析器
+					- 优化器
 						- Stat
 						- Hinting
 						- Plan
@@ -139,9 +136,9 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 						- Read committed (默认)
 							- READ_COMMITTED_SNAPSHOT
 								- ON
-									- repeatable read
-								- OFF (default)
-									- Nonrepeatable read, phantom
+									- 可重复的读取
+								- OFF (默认)
+									- 不可重复的读取
 						- Repeatable read
 						- Snapshot
 							- Database ALLOW_SNAPSHOT_ISOLATION ON
@@ -151,8 +148,8 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 					- Lock
 						- 乐观锁
 						- 悲观锁
-						- Exclusive
-						- Shared
+						- 排他
+						- 共享
 					- Wait
 					- Latch
 					- 死锁
@@ -167,7 +164,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 							- 备份事务日志
 							- 影响备份类型
 							- 影响复制类型
-						- 模式
+						- Models
 							- 简单
 								- Not point-in-time recovery
 								- Minimum space
@@ -182,11 +179,11 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 						- 版本
 							- 实际上就是SQL Server的版本
 							- @@VERSION
-						- 130: SQL  Server 2016
-						- 120: SQL  Server 2014
-						- 110: SQL  Server 2012
-						- 100: SQL  Server 2008
-						- 90: SQL  Server 2005
+						- 130: SQL Server 2016
+						- 120: SQL Server 2014
+						- 110: SQL Server 2012
+						- 100: SQL Server 2008
+						- 90: SQL Server 2005
 						- 80: SQL Server 2000
 					- 加密
 					- 复制
@@ -233,7 +230,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 						- Drop
 				- 列
 					- columnstore
-						- Suitable for Data warehouse
+						- 适合数据仓库
 					- NTFS FileStream
 				- Schema
 				- 触发器
@@ -245,7 +242,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 				- Key
 				- Default
 				- Synonym
-				- Sequence
+				- 序列
 				- 变量
 					- 本地变量 (@)
 					- 全局变量 (@@)
@@ -278,9 +275,9 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 					- Security Levels
 				- Linked Server
 				- Service Broker
-					- Basics
+					- 基本知识
 						- Transactional message queue
-					- Objects
+					- 对象
 						- Message
 						- Contract
 						- Queue
