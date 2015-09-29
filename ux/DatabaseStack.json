@@ -1457,6 +1457,18 @@
                 { "name": "SQL Inject" },
                 { "name": "Backup" }
               ]
+            },
+            {
+              "name": "Testing",
+              "languages": {
+                "zh-cn": "测试"
+              },
+              "children": [
+                {
+                  "name": "tSQLt",
+                  "url": "http://tsqlt.org/"
+                }
+              ]
             }
           ]
         },
