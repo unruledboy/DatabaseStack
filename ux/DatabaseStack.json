@@ -1512,7 +1512,6 @@
                 { "name": "Blobs" },
                 { "name": "Tables" },
                 { "name": "Queues" },
-                { "name": "StorSimple" },
                 { "name": "Files and Disks" }
               ]
             },

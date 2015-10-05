@@ -475,7 +475,6 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Blobs
 				- Tables
 				- Queues
-				- StorSimple
 				- Files and Disks
 			- StorSimple
 			- SQL Data Warehouse
