@@ -337,6 +337,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 				- Request
 				- Stall
 				- Stats
+				- Query Store
 				- Cache
 					- aging
 				- Catalog Views

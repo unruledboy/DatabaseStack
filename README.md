@@ -334,6 +334,7 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm
 				- Request
 				- Stall
 				- Stats
+				- Query Store
 				- Cache
 					- aging
 				- Catalog Views
