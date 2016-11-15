@@ -391,14 +391,18 @@ https://rawgit.com/unruledboy/DatabaseStack/master/ux/DatabaseStack.htm?locale=z
 					- IntelliSense
 					- SSRS Charting (acquired Dundas charts)
 				- SQL Server 2012
-					- Columnstore Index
 					- Sequence
 					- THROW
 				- SQL Server 2014
 					- In-memory Table
+					- Clustered Columnstore Index
 				- SQL Server 2016
+					- Columnstore Index
+					- In-memory OLTP
 					- JSON
-					- Ploybase (connector to BigData)
+					- Query Store
+					- Temporal Tables
+					- Polybase (connector to BigData)
 					- Always Encrypted
 			- 产品版本
 				- Express

@@ -1280,7 +1280,6 @@
                 {
                   "name": "SQL Server 2012",
                   "children": [
-                    { "name": "Columnstore Index" },
                     { "name": "Sequence" },
                     { "name": "THROW" }
                   ]
@@ -1288,14 +1287,19 @@
                 {
                   "name": "SQL Server 2014",
                   "children": [
-                    { "name": "In-memory Table" }
+                    { "name": "In-memory Table" },
+                    { "name": "Clustered Columnstore Index" }
                   ]
                 },
                 {
                   "name": "SQL Server 2016",
                   "children": [
+                    { "name": "Columnstore Index" },
+                    { "name": "In-memory OLTP" },
                     { "name": "JSON" },
-                    { "name": "Ploybase (connector to BigData)" },
+                    { "name": "Query Store" },
+                    { "name": "Temporal Tables" },
+                    { "name": "Polybase (connector to BigData)" },
                     { "name": "Always Encrypted" }
                   ]
                 }
