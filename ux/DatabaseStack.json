@@ -1327,6 +1327,7 @@
               },
               "children": [
                 { "name": "SQL Server Management Studio (SSMS)" },
+		{ "name": "SQL Operations Studio" },
                 { "name": "SQL Server Command Line Util (sqlcmd)" },
                 {
                   "name": "SQL Monitor ;-)",
